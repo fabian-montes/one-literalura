@@ -9,12 +9,18 @@ import java.util.stream.Collectors;
 import com.aluracursos.literalura.modelos.DatosLibro;
 import com.aluracursos.literalura.modelos.DatosLista;
 import com.aluracursos.literalura.modelos.Libro;
+import com.aluracursos.literalura.repositorio.RepositorioLibro;
 import com.aluracursos.literalura.servicio.ConsumoApi;
 import com.aluracursos.literalura.servicio.ConvierteDatos;
 
 public class Principal {
     private String URL = "https://gutendex.com";
     private Scanner scanner = new Scanner(System.in);
+    private RepositorioLibro repositorio;
+
+    public Principal(RepositorioLibro repositorio) {
+        this.repositorio = repositorio;
+    }
 
     public void mostrarMenu() {
         System.out.println("Elige la opción a través de su número:");
@@ -49,5 +55,8 @@ public class Principal {
         
         libros.stream()
         .forEach(System.out::println);
+
+        Libro libro = libros.getFirst();
+        repositorio.save(libro);
     }
 }
