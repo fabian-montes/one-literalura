@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+import com.aluracursos.literalura.modelos.Autor;
 import com.aluracursos.literalura.modelos.DatosLibro;
 import com.aluracursos.literalura.modelos.DatosLista;
 import com.aluracursos.literalura.modelos.Libro;
@@ -49,14 +50,12 @@ public class Principal {
 
         List<Libro> libros = new ArrayList<>();
         libros = datosLibro.stream()
-                .map(d -> new Libro(d))
-                .limit(1)
-                .collect(Collectors.toList());
+        .map(d -> new Libro(d))
+        .limit(1)
+        .collect(Collectors.toList());
         
-        libros.stream()
-        .forEach(System.out::println);
-
         Libro libro = libros.getFirst();
+        System.out.println(libro);
         repositorio.save(libro);
     }
 }

@@ -33,4 +33,19 @@ public class Libro {
                 " Numero de descargas: "+numeroDescargas+"\n"+
                 "-----------------\n";
     }
+
+    public Long getId() { return Id; }
+    public void setId(Long id) { Id = id; }
+
+    public String getTitulo() { return titulo; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+
+    public List<String> getIdiomas() { return idiomas; }
+    public void setIdiomas(List<String> idiomas) { this.idiomas = idiomas; }
+
+    public Integer getNumeroDescargas() { return numeroDescargas; }
+    public void setNumeroDescargas(Integer numeroDescargas) { this.numeroDescargas = numeroDescargas; }
+
+    public List<Autor> getAutores() { return autores; }
+    public void setAutores(List<Autor> autores) { this.autores = autores; }
 }
